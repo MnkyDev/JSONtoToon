@@ -34,6 +34,7 @@ int main(int argc, char* argv[]){
     }
     ofstream output(config.outputFile);
     output << root->toToon(0) << endl;
+    output.close();
     return 0;
 }
 
