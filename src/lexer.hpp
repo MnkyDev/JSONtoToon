@@ -34,6 +34,7 @@ struct Token{
             case COMMA: cout << "TOKEN , " << endl; break;
             case STRING: cout << "TOKEN: STR - " << value << endl; break;
             case NUMBER: cout << "TOKEN: NUM - " << value << endl; break;
+            case BOOLEAN: cout << "TOKEN: BOOL - " << value << endl; break;
             case UNKNOWN: cout << "TOKEN: UNKNOWN - " << value << endl; break;
         }
     }

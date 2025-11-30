@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 #include "fileReader.hpp"
 #include "jsonClasses.hpp"
@@ -31,8 +32,8 @@ int main(int argc, char* argv[]){
     } else {
         cerr << "An error occured whilst creating the tree";
     }
-
-    cout << root->toToon(0) << endl;
+    ofstream output(config.outputFile);
+    output << root->toToon(0) << endl;
     return 0;
 }
 

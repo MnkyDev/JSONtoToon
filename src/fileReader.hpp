@@ -13,7 +13,7 @@ using namespace std;
 
 struct programConfig{
     string inputFile;
-    string outputFile {"output.toon"}; 
+    string outputFile {"output/output.toon"}; 
     string initData;
     string error; // Allows us to display later
 };
@@ -26,12 +26,13 @@ programConfig readFile(int argc, char* argv[]){
         string currentArg = argv[i];
 
         if ((currentArg == "-o" || currentArg == "-O")){
-            if (i + 1 < argc){ // has to be -o fileName, cannot do -o for default
+            if (i + 1 < argc){ // has to be -o fileName
                 config.outputFile = argv[i + 1];
+                config.outputFile = "output/" + config.outputFile;
                 i++; 
             } else {
                 config.error = "-o Requires exactly (1) argument";
-                return config;
+                return config;  
             }
         } else { // Assume input file
             config.inputFile = currentArg;
